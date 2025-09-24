@@ -4,10 +4,19 @@
   "private": true,
   "description": "IP Location Finder - Descubra a localização de qualquer IP ou domínio no mundo",
   "author": "Pedro Riccio <pedroworkdev@gmail.com>",
-  "keywords": ["ip", "location", "geolocation", "react", "map", "leaflet", "ip-tracker", "domain-lookup"],
+  "keywords": [
+    "ip",
+    "location",
+    "geolocation",
+    "react",
+    "map",
+    "leaflet",
+    "ip-tracker",
+    "domain-lookup"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Pedro-Dev/ip-location-finder.git"
+    "url": "https://github.com/IIBladeII/ip-location.git"
   },
   "bugs": {
     "url": "https://github.com/Pedro-Dev/ip-location-finder/issues"

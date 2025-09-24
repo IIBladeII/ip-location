@@ -24,12 +24,14 @@ Uma aplicação web moderna e elegante para descobrir a localização geográfic
 ## 📋 Funcionalidades
 
 ### 🔍 Busca de IP/Domínio
+
 - Busca por endereço IP (IPv4/IPv6)
 - Busca por nome de domínio
 - Validação automática de entrada
 - Tratamento de erros elegante
 
 ### 📊 Informações Detalhadas
+
 - **Localização**: País, região, cidade
 - **Coordenadas**: Latitude e longitude
 - **Provedor**: ISP e organização
@@ -37,6 +39,7 @@ Uma aplicação web moderna e elegante para descobrir a localização geográfic
 - **Código Postal**: CEP da região
 
 ### 🗺️ Visualização no Mapa
+
 - Mapa interativo com Leaflet
 - Marcador preciso da localização
 - Zoom automático para a região
@@ -45,6 +48,7 @@ Uma aplicação web moderna e elegante para descobrir a localização geográfic
 ## 🛠️ Tecnologias Utilizadas
 
 ### Frontend
+
 - **React 18.2.0** - Biblioteca JavaScript para interfaces
 - **Styled Components 6.1.1** - CSS-in-JS para estilização
 - **Framer Motion 10.16.4** - Animações e transições
@@ -53,6 +57,7 @@ Uma aplicação web moderna e elegante para descobrir a localização geográfic
 - **Axios 1.6.2** - Cliente HTTP para APIs
 
 ### APIs
+
 - **ipapi.co** - Geolocalização de IP principal
 - **Google DNS** - Resolução de domínios
 - **OpenStreetMap** - Tiles do mapa
@@ -60,18 +65,21 @@ Uma aplicação web moderna e elegante para descobrir a localização geográfic
 ## 📦 Instalação
 
 ### Pré-requisitos
-- Node.js 16+ 
+
+- Node.js 16+
 - npm ou yarn
 
 ### Passos
 
 1. **Clone o repositório**
+
 ```bash
-git clone https://github.com/Pedro-Dev/ip-location-finder.git
+git clone https://github.com/IIBladeII/ip-location.git
 cd ip-location-finder
 ```
 
 2. **Instale as dependências**
+
 ```bash
 npm install
 # ou
@@ -79,6 +87,7 @@ yarn install
 ```
 
 3. **Execute o projeto**
+
 ```bash
 npm start
 # ou
@@ -86,6 +95,7 @@ yarn start
 ```
 
 4. **Acesse no navegador**
+
 ```
 http://localhost:3000
 ```
@@ -130,6 +140,7 @@ ip-location-finder/
 ## 🎨 Customização
 
 ### Cores do Tema
+
 ```javascript
 // Cores principais
 const colors = {
@@ -137,27 +148,30 @@ const colors = {
   secondary: '#17a2b8',
   success: '#28a745',
   background: '#0a1929',
-  surface: '#1a2a3d'
+  surface: '#1a2a3d',
 };
 ```
 
 ### Configuração do Mapa
+
 ```javascript
 // Configurações do Leaflet
 const mapConfig = {
   defaultZoom: 10,
   maxZoom: 18,
-  tileLayer: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+  tileLayer: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
 };
 ```
 
 ## 🔧 Configuração de APIs
 
 O projeto utiliza APIs públicas que não requerem chave de API:
+
 - **ipapi.co**: Limite de 1000 requisições/dia
 - **Google DNS**: Sem limite para uso pessoal
 
 Para uso em produção com maior volume, considere:
+
 - Upgrade para plano pago do ipapi.co
 - Implementação de cache local
 - Rate limiting no frontend
@@ -165,23 +179,27 @@ Para uso em produção com maior volume, considere:
 ## 📱 Responsividade
 
 O projeto é totalmente responsivo com breakpoints:
+
 - **Mobile**: < 768px
-- **Tablet**: 768px - 1024px  
+- **Tablet**: 768px - 1024px
 - **Desktop**: > 1024px
 
 ## 🚀 Deploy
 
 ### Vercel (Recomendado)
+
 1. Conecte seu repositório GitHub
 2. Configure as variáveis de ambiente (se necessário)
 3. Deploy automático a cada push
 
 ### Netlify
+
 1. Build command: `npm run build`
 2. Publish directory: `build`
 3. Deploy automático configurado
 
 ### Outras Plataformas
+
 - **GitHub Pages**: Suporte completo
 - **Firebase Hosting**: Configuração simples
 - **AWS S3**: Para hospedagem estática
@@ -203,6 +221,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 ## 👨‍💻 Autor
 
 **Pedro Riccio**
+
 - Portfolio: [pedroriccio.vercel.app](https://pedroriccio.vercel.app)
 - GitHub: [@Pedro-Dev](https://github.com/Pedro-Dev)
 - Email: pedroworkdev@gmail.com
