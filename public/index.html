@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#4a90e2" />
+    <meta name="description" content="IP Location Finder - Descubra a localização de qualquer IP ou domínio no mundo" />
+    <meta name="keywords" content="IP, localização, geolocalização, mapa, domínio, Pedro-Dev" />
+    <meta name="author" content="Pedro-Dev" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ip-location-finder.vercel.app" />
+    <meta property="og:title" content="IP Location Finder - Pedro Riccio" />
+    <meta property="og:description" content="Descubra a localização de qualquer IP ou domínio no mundo com nosso localizador avançado" />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://ip-location-finder.vercel.app" />
+    <meta property="twitter:title" content="IP Location Finder - Pedro Riccio" />
+    <meta property="twitter:description" content="Descubra a localização de qualquer IP ou domínio no mundo com nosso localizador avançado" />
+    <meta property="twitter:image" content="%PUBLIC_URL%/og-image.png" />
+
+    <!-- Preconnect para melhor performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://ipapi.co">
+    <link rel="preconnect" href="https://dns.google">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+          crossorigin="" />
+    
+    <title>IP Location Finder - Pedro Riccio</title>
+    
+    <style>
+      /* Loading screen styles */
+      #initial-loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #0a1929 0%, #1a2a3d 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease-out;
+      }
+      
+      #initial-loading.fade-out {
+        opacity: 0;
+        pointer-events: none;
+      }
+      
+      .loading-spinner {
+        width: 60px;
+        height: 60px;
+        border: 3px solid rgba(74, 144, 226, 0.2);
+        border-top: 3px solid #4a90e2;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 1rem;
+      }
+      
+      .loading-text {
+        color: #4a90e2;
+        font-family: 'Inter', sans-serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      /* Prevent flash of unstyled content */
+      body {
+        margin: 0;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background: #0a1929;
+        overflow-x: hidden;
+      }
+      
+      #root {
+        min-height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <div style="text-align: center; padding: 2rem; color: #fff; background: #0a1929; min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+        <div>
+          <h1>JavaScript Necessário</h1>
+          <p>Você precisa habilitar o JavaScript para executar este aplicativo.</p>
+          <p>You need to enable JavaScript to run this app.</p>
+        </div>
+      </div>
+    </noscript>
+    
+    <!-- Initial loading screen -->
+    <div id="initial-loading">
+      <div class="loading-spinner"></div>
+      <div class="loading-text">Carregando IP Location Finder...</div>
+    </div>
+    
+    <div id="root"></div>
+    
+    <script>
+      // Remove loading screen when React app loads
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          const loadingScreen = document.getElementById('initial-loading');
+          if (loadingScreen) {
+            loadingScreen.classList.add('fade-out');
+            setTimeout(function() {
+              loadingScreen.remove();
+            }, 500);
+          }
+        }, 1000);
+      });
+      
+      // Service Worker registration for PWA capabilities
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+              console.log('SW registered: ', registration);
+            })
+            .catch(function(registrationError) {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
