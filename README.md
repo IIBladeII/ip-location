@@ -184,26 +184,6 @@ O projeto é totalmente responsivo com breakpoints:
 - **Tablet**: 768px - 1024px
 - **Desktop**: > 1024px
 
-## 🚀 Deploy
-
-### Vercel (Recomendado)
-
-1. Conecte seu repositório GitHub
-2. Configure as variáveis de ambiente (se necessário)
-3. Deploy automático a cada push
-
-### Netlify
-
-1. Build command: `npm run build`
-2. Publish directory: `build`
-3. Deploy automático configurado
-
-### Outras Plataformas
-
-- **GitHub Pages**: Suporte completo
-- **Firebase Hosting**: Configuração simples
-- **AWS S3**: Para hospedagem estática
-
 ## 🤝 Contribuição
 
 Contribuições são sempre bem-vindas! Para contribuir:
