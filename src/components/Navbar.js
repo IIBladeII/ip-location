@@ -96,7 +96,7 @@ const Navbar = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <FaHome className="icon" />
-          IP Location Finder
+          IP Location Finders
         </Logo>
 
         <BackButton

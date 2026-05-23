@@ -214,7 +214,7 @@ const SearchContainer = ({ onSearch, onMyIP, loading, error }) => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        IP Location Finder
+        IP Location Finders
       </Title>
 
       <Subtitle
