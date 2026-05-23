@@ -19,7 +19,9 @@ Uma aplicação web moderna e elegante para descobrir a localização geográfic
 
 ## 🚀 Demonstração
 
-[Ver Demo ao Vivo](https://ip-location-finder.vercel.app)
+[Ver Demo ao Vivo](https://ip-location-neon.vercel.app)
+
+> 🆕 **Última atualização**: 2026-05-22 — Testes de integração CI/CD
 
 ## 📋 Funcionalidades
 
